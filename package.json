@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "firebase": "^7.14.6",
+    "lodash.memoize": "^4.1.2",
     "node-sass": "^4.14.1",
     "react": "^16.13.1",
     "react-dom": "^16.13.1",
@@ -12,6 +13,7 @@
     "react-scripts": "^3.4.1",
     "redux": "^4.0.5",
     "redux-logger": "^3.0.6",
+    "redux-persist": "^6.0.0",
     "reselect": "^4.0.0"
   },
   "scripts": {
