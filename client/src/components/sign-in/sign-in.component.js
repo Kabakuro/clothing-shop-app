@@ -6,7 +6,11 @@ import CustomButton from '../custom-button/custom-button.component'
 
 import { googleSignInStart, emailSignInStart } from '../../redux/user/user.actions';
 
-import './sign-in.styles.scss'
+import {
+    SignInContainer,
+    SignInTitle,
+    ButtonsBarContainer
+  } from './sign-in.styles';
 
 const SignIn = ({ emailSignInStart, googleSignInStart }) => {
 
@@ -30,39 +34,39 @@ const SignIn = ({ emailSignInStart, googleSignInStart }) => {
     };
 
     return (
-        <div className="sign-in">
-            <h2>I already have an account</h2>
+        <SignInContainer>
+            <SignInTitle>I already have an account</SignInTitle>
             <span>Sign in with your email and password</span>
-
+    
             <form onSubmit={handleSubmit}>
-                <FormInput 
-                    name="email" 
-                    type="email" 
-                    value={email} 
-                    handleChange={handleChange}
-                    label="email"
-                    required 
-                />
-                <FormInput 
-                    name="password" 
-                    type="password" 
-                    value={password} 
-                    handleChange={handleChange}
-                    label="password"
-                    required 
-                />
-                <div className="buttons">
-                    <CustomButton type="submit"> Sign in </CustomButton>
-                    <CustomButton 
-                        type="button" 
-                        onClick={googleSignInStart} 
-                        isGoogleSignIn
-                    > 
-                        Sign in with Google 
-                    </CustomButton>
-                </div>        
+            <FormInput
+                name='email'
+                type='email'
+                handleChange={handleChange}
+                value={email}
+                label='email'
+                required
+            />
+            <FormInput
+                name='password'
+                type='password'
+                value={password}
+                handleChange={handleChange}
+                label='password'
+                required
+            />
+            <ButtonsBarContainer>
+                <CustomButton type='submit'> Sign in </CustomButton>
+                <CustomButton
+                type='button'
+                onClick={googleSignInStart}
+                isGoogleSignIn
+                >
+                Sign in with Google
+                </CustomButton>
+            </ButtonsBarContainer>
             </form>
-        </div>
+       </SignInContainer>
     );
     
 };
